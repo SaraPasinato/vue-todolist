@@ -13,9 +13,39 @@
 </head>
 
 <body>
-    <div id="app">
-
-    </div>
+    <!-- logo+title -->
+    <header id="main-header" class="bg-success ">
+        <div class="container-fluid text-center">
+           <div class="row justify-content-center  ">
+               <div class="col-4">
+                   <div class="row justify-content-center align-items-center">
+                       <div class="col-4 ">
+                        <img id="logo" src="./img/logo-small.png" alt="logo-small" class="w-50">
+                       </div>
+                       <div class="col-8">
+                        <h1 id="title-logo" class="fw-bolder">ToBooList</h1>
+                       </div>
+                   </div>
+               </div>
+           </div>
+        </div>
+    </header>
+    <main id="todos-main" class="">
+        <div id="app" class="container-sm">
+            <section id="section-form" class="row">
+               
+            </section>
+            <section id="section-todos" class="row">
+                    <div class="col-12">
+                        <ul class="list-group mt-1 lead fw-lighter">
+                            <li class="list-group-item my-1 d-flex justify-content-between" v-for=" t in todos">{{t}}
+                                <button type="button" class="btn-close" aria-label="Close"></button>
+                            </li>
+                          </ul>
+                    </div>
+            </section>
+        </div>
+    </main>
     <script type="text/javascript" src="./js/script.js"></script>
 </body>
 

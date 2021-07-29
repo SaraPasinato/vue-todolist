@@ -15,6 +15,11 @@ Vue.config.devtools=true;
 var app = new Vue({
     el: '#app',
     data: {
-      message: 'Hello Vue!'
+     todos:[
+      "fare la spesa",
+      "pagare le bollette",
+      "pulire la macchina ",
+      "chiamare l'idraulico"
+     ],
     }
   })
