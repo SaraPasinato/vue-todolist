@@ -1,12 +1,13 @@
+body{
+    background-color: #001533;
+}
+
 #section-form,
 #main-header {
     min-height: 10vh;
 }
 
-#todos-main{
-    min-height: calc(100vh - 102.6px);
-    background-color: #001533;
-}
+
 
 
 #title-logo{
