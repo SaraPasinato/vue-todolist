@@ -4,7 +4,7 @@
 }
 
 #todos-main{
-    min-height: calc(100vh - 10vh);
+    min-height: calc(100vh - 102.6px);
     background-color: #001533;
 }
 
@@ -28,6 +28,3 @@
     }
 }
 
-@media (min-width: 1200px) { 
-  
-}
