@@ -8,15 +8,26 @@
     background-color: #001533;
 }
 
-#logo{
-    max-width:50%;
-}
+
 #title-logo{
     font-size: 4rem;
-
 }
 
 #section-todos{
     min-height: 30vh;
-    border: 1px solid snow;
+}
+
+#logo{
+    max-width: 30%;
+}
+
+
+@media (min-width: 768px) { 
+    #logo{
+        max-width: 50%;
+    }
+}
+
+@media (min-width: 1200px) { 
+  
 }
