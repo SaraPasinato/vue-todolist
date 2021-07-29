@@ -38,8 +38,8 @@
             <section id="section-todos" class="row">
                     <div class="col-12">
                         <ul class="list-group mt-1 lead fw-lighter">
-                            <li class="list-group-item my-1 d-flex justify-content-between" v-for=" t in todos">{{t}}
-                                <button type="button" class="btn-close" aria-label="Close"></button>
+                            <li class="list-group-item my-1 d-flex justify-content-between" v-for=" (t,index) in todos">{{t}}
+                                <button type="button" class="btn-close" aria-label="Close" @click="removeTask(index)"></button>
                             </li>
                           </ul>
                     </div>

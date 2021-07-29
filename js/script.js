@@ -21,5 +21,10 @@ var app = new Vue({
       "pulire la macchina ",
       "chiamare l'idraulico"
      ],
+    },
+    methods:{
+      removeTask(i){
+        this.todos.splice(i,1);
+      }
     }
   })
