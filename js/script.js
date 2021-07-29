@@ -15,6 +15,7 @@ Vue.config.devtools=true;
 var app = new Vue({
     el: '#app',
     data: {
+     currentTask:"",
      todos:[
       "fare la spesa",
       "pagare le bollette",
@@ -25,6 +26,15 @@ var app = new Vue({
     methods:{
       removeTask(i){
         this.todos.splice(i,1);
+      },
+      addTaskTail(){
+        if (this.currentTask.trim()!= "") this.todos.push(this.currentTask);
+        this.currentTask="";
+      },
+      addTaskHead(){
+        if (this.currentTask.trim()!= "") this.todos.unshift(this.currentTask);
+        this.currentTask="";
+
       }
     }
   })

@@ -32,8 +32,14 @@
     </header>
     <main id="todos-main" class="">
         <div id="app" class="container-sm">
-            <section id="section-form" class="row">
-               
+            <section id="section-form" class="row pt-4">
+                <div class="col-12">
+                    <div class="input-group mb-3">
+                        <button class="btn btn-outline-success" type="button"  @click="addTaskHead" >Aggiungi in cima</button>
+                        <button class="btn btn-outline-success" type="button" @click="addTaskTail">Aggiungi in coda</button>
+                        <input type="text" class="form-control" placeholder="Scrivi qui" v-model="currentTask">
+                      </div>
+                </div>
             </section>
             <section id="section-todos" class="row">
                     <div class="col-12">
