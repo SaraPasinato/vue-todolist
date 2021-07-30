@@ -35,17 +35,19 @@
     </header>
     <main id="todos-main" class="pt-4">
         <div id="app" class="container-sm">
-            <section id="section-form" class="row " >
+            <section id="section-form" class="row ">
                 <div class="col-12">
-                    <div class="input-group "v-if="!todos.length" >
+                    <div class="input-group " v-if="!todos.length">
                         <button class="btn btn-outline-success " type="button" @click="addTaskHead"><i
                                 class="far fa-arrow-alt-circle-up"></i></button>
                         <button class="btn btn-outline-success " type="button" @click="addTaskTail"><i
                                 class="far fa-arrow-alt-circle-down"></i></button>
-                        <input type="text" class="form-control" placeholder="Scrivi qui" v-model="currentTask" @keyup.enter="addTaskTail">
+                        <input type="text" class="form-control" placeholder="Scrivi qui" v-model="currentTask"
+                            @keyup.enter="addTaskTail">
                     </div>
                     <div class="input-group" v-else>
-                        <input id="search"type="text" class="form-control" placeholder="Ricerca..." v-model="currentSearch">
+                        <input id="search" type="text" class="form-control" placeholder="Ricerca..."
+                            v-model="currentSearch">
                         <span class="input-group-text" id="search"><i class="fas fa-search"></i></span>
                     </div>
                 </div>
@@ -56,21 +58,25 @@
                         <p class=""> Non ci sono più task !!</p>
                     </div>
                     <ul class="list-group  lead fw-lighter" v-else>
-                        <li class="list-group-item mt-1 d-flex justify-content-between" v-for=" (t,index) in todos" v-if="showTask(t)">
-                            {{t}}
+                        <li class="list-group-item mt-1 d-flex justify-content-between align-items-center"
+                            v-for=" (t,index) in todos" v-if="showTask(t.text)">
+                            <div>
+                                <i class="far fa-circle"></i>
+                                <!-- <i class="fas fa-check-circle text-success"></i> -->
+                                <span> {{t.text}}</span>
+                            </div>
                             <button type="button" class="btn-close" aria-label="Close"
                                 @click="removeTask(index)"></button>
                         </li>
-                        <li class="list-group-item mt-1 d-flex justify-content-between bg-bool " >
+                        <li class="list-group-item mt-1 d-flex justify-content-between bg-bool ">
                             <div class="input-group">
                                 <button class="btn btn-outline-success " type="button" @click="addTaskHead"><i
                                         class="far fa-arrow-alt-circle-up"></i></button>
                                 <button class="btn btn-outline-success " type="button" @click="addTaskTail"><i
                                         class="far fa-arrow-alt-circle-down"></i></button>
-                                <input type="text" class="form-control" placeholder="Scrivi qui" v-model="currentTask" @keyup.enter="addTaskTail">
-                                    <!-- TODO -->
-                                <button class="btn btn-outline-success " type="button" ><i
-                                    class="fas fa-undo"></i></button>
+                                <input type="text" class="form-control" placeholder="Scrivi qui" v-model="currentTask"
+                                    @keyup.enter="addTaskTail">
+
                             </div>
                         </li>
                     </ul>

@@ -19,28 +19,27 @@ var app = new Vue({
      currentTask:"",
      currentSearch:"",
      todos:[
-      "fare la spesa",
-      "pagare le bollette",
-      "pulire la macchina ",
-      "chiamare l'idraulico"
-     ]
+      {text:"fare la spesa",done:false},
+      {text:"pagare le bollette",done:false},
+      {text:"pulire la macchina ",done:false},
+      {text:"chiamare l'idraulico",done:false}
+     ],
     },
     methods:{
       removeTask(i){
         this.todos.splice(i,1);
       },
       addTaskTail(){
-        if (this.currentTask.trim()!= "") this.todos.push(this.currentTask);
+        if (this.currentTask.trim()!= "") this.todos.push({text:this.currentTask,done:false});
         this.currentTask="";
       },
       addTaskHead(){
-        if (this.currentTask.trim()!= "") this.todos.unshift(this.currentTask);
+        if (this.currentTask.trim()!= "") this.todos.unshift({text:this.currentTask,done:false});
         this.currentTask="";
-
       },
-      showTask(task){
+      showTask(text){
         const filter= this.currentSearch.trim().toLowerCase();
-        task=task.toLowerCase();
+        text=text.toLowerCase();
         return task.includes(filter);
        
       }
