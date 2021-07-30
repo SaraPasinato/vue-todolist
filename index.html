@@ -60,10 +60,9 @@
                     <ul class="list-group  lead fw-lighter" v-else>
                         <li class="list-group-item mt-1 d-flex justify-content-between align-items-center"
                             v-for=" (t,index) in todos" v-if="showTask(t.text)">
-                            <div>
-                                <i class="far fa-circle"></i>
-                                <!-- <i class="fas fa-check-circle text-success"></i> -->
-                                <span> {{t.text}}</span>
+                            <div @click="toggleDone(index)">
+                                <i class="" :class="isDone(index) ? 'fas fa-check-circle text-success' :'far fa-circle'"></i>
+s                                <span> {{ t.text }} </span>
                             </div>
                             <button type="button" class="btn-close" aria-label="Close"
                                 @click="removeTask(index)"></button>

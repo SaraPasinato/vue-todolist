@@ -22,7 +22,7 @@ var app = new Vue({
       {text:"fare la spesa",done:false},
       {text:"pagare le bollette",done:false},
       {text:"pulire la macchina ",done:false},
-      {text:"chiamare l'idraulico",done:false}
+      {text:"chiamare l'idraulico",done:false},
      ],
     },
     methods:{
@@ -40,8 +40,18 @@ var app = new Vue({
       showTask(text){
         const filter= this.currentSearch.trim().toLowerCase();
         text=text.toLowerCase();
-        return task.includes(filter);
-       
-      }
-    }
-  })
+        return text.includes(filter);
+      },
+      toggleDone(i){
+        this.todos=this.todos.map((todo,todoIndex)=>{
+          if(todoIndex=== i){
+            todo.done=!todo.done;
+          }
+          return todo;
+        });
+      },
+      isDone(i){
+       return this.todos[i].done;
+      },
+    },
+  });
