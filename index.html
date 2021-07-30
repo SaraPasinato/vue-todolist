@@ -61,8 +61,9 @@
                         <li class="list-group-item mt-1 d-flex justify-content-between align-items-center"
                             v-for=" (t,index) in todos" v-if="showTask(t.text)">
                             <div @click="toggleDone(index)">
-                                <i class="" :class="isDone(index) ? 'fas fa-check-circle text-success' :'far fa-circle'"></i>
-s                                <span> {{ t.text }} </span>
+                                <i class=""
+                                    :class="isDone(index) ? 'fas fa-check-circle text-success' :'far fa-circle'"></i>
+                                <span> {{ t.text }} </span>
                             </div>
                             <button type="button" class="btn-close" aria-label="Close"
                                 @click="removeTask(index)"></button>
@@ -75,7 +76,6 @@ s                                <span> {{ t.text }} </span>
                                         class="far fa-arrow-alt-circle-down"></i></button>
                                 <input type="text" class="form-control" placeholder="Scrivi qui" v-model="currentTask"
                                     @keyup.enter="addTaskTail">
-
                             </div>
                         </li>
                     </ul>
