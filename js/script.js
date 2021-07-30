@@ -17,6 +17,7 @@ var app = new Vue({
     el: '#app',
     data: {
      currentTask:"",
+     currentSearch:"",
      todos:[
       "fare la spesa",
       "pagare le bollette",
@@ -36,6 +37,12 @@ var app = new Vue({
         if (this.currentTask.trim()!= "") this.todos.unshift(this.currentTask);
         this.currentTask="";
 
+      },
+      showTask(task){
+        const filter= this.currentSearch.trim().toLowerCase();
+        task=task.toLowerCase();
+        return task.includes(filter);
+       
       }
     }
   })

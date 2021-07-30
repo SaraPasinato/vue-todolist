@@ -20,6 +20,10 @@ body{
     max-width: 30%;
 }
 
+.bg-bool{
+    background-color: #001533;
+
+}
 
 @media (min-width: 768px) { 
     #logo{
