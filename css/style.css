@@ -24,6 +24,10 @@ body{
     background-color: #001533;
 
 }
+.bg-light-green {
+    background-color: #b4fcb4;
+
+}
 
 @media (min-width: 768px) { 
     #logo{
